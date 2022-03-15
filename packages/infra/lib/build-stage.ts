@@ -15,9 +15,8 @@ export class BuildStage extends Stage {
 
     const buildStack = new BuildStack(this, 'BuildStack', {});
 
-    this.repositoryUri = new CfnOutput(this, 'RepositoryUri', {value: buildStack.repository.repositoryUri});
-    this.repositoryName = new CfnOutput(this, 'RepositoryName', {value: buildStack.repository.repositoryName});
-
+    this.repositoryUri = buildStack.repositoryUri;
+    this.repositoryName = buildStack.repositoryName;
 
   }
 }

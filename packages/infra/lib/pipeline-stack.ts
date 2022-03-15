@@ -40,10 +40,10 @@ export class PipelineStack extends Stack {
     });
 
     //Adding build stack and asset publishing step
-    const buildStage = new BuildStage(this, 'BuildStage', {});
+    const buildStage = new BuildStage(this, 'Asset Publishing', {});
     pipeline.addStage(buildStage, {
       post: [
-        new CodeBuildStep('DockerPublishStep', {
+        new CodeBuildStep('Asset Publishing', {
           input: source,
           commands: [
             'make docker-login',
